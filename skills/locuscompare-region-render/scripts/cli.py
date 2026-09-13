@@ -346,7 +346,8 @@ def _run(*, config: dict, config_dir: Path, output: Path) -> int:
             print(
                 f"warning: on-demand LD client unavailable ({e!s}). "
                 "Rendering without LD coloring; variants will appear grey. "
-                "Install plink 1.9 (brew / apt / conda) and pysam, or set "
+                "Install plink 1.9 (brew / apt / conda) and the sibling skill "
+                "ld-1000g-region-compute's requirements, or set "
                 "PLINK_BIN to a plink binary path.",
                 file=sys.stderr,
             )

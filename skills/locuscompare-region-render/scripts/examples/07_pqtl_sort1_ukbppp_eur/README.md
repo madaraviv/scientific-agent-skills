@@ -20,8 +20,13 @@ python cli.py --demo 07_pqtl_sort1_ukbppp_eur --output runs/pqtl_sort1_ukbppp/
 
 ## What the recorded run showed
 
-`expected_output/` holds the `manifest.yaml` and `report.md` of a run on 2026-05-24 with the
-sibling installed (`n_pairs: 4606`, `n_palindromic_excluded: 635`); the PNG is not shipped.
+The `manifest.yaml` and `report.md` of a run on 2026-05-24 with the sibling installed
+(`n_pairs: 4606`, `n_palindromic_excluded: 635`) are kept as test fixtures in this
+repository, not in the skill, at
+`tests/locuscompare-region-render/fixtures/examples/07_pqtl_sort1_ukbppp_eur/expected_output/`;
+the PNG is not shipped. The window label on line 3 of that `report.md` (`±500 kb`) was
+re-derived from the current code, which reports the half-window the fetch covered, rather
+than copied from the 2026-05-24 run, whose report printed the full width.
 The exposure is UKB-PPP release 1 (Sun 2023, Nature 2023;622:329-338,
 doi:10.1038/s41586-023-06592-6), SORT1 (UniProt Q99523, Olink OID20213), European discovery
 cohort. At rs12740374 the T allele raises plasma sortilin (beta +0.12 in that release) while

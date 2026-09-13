@@ -32,9 +32,13 @@ composer writes that as a caveat in the caption and in `render_block.ancestry_ca
 python cli.py --demo 05_sqtl_sort1_liver_txrev --output runs/sqtl_sort1_liver_txrev/
 ```
 
-`expected_output/` holds the `manifest.yaml` and `report.md` of a run on 2026-05-24
-(`n_pairs: 2648`, `n_palindromic_excluded: 349`, LD from 1000 Genomes EUR via plink 1.9); the
-PNG is not shipped.
+The `manifest.yaml` and `report.md` of a run on 2026-05-24 (`n_pairs: 2648`,
+`n_palindromic_excluded: 349`, LD from 1000 Genomes EUR via plink 1.9) are kept as test
+fixtures in this repository, not in the skill, at
+`tests/locuscompare-region-render/fixtures/examples/05_sqtl_sort1_liver_txrev/expected_output/`;
+the PNG is not shipped. The window label on line 3 of that `report.md` (`±500 kb`) was
+re-derived from the current code, which reports the half-window the fetch covered, rather
+than copied from the 2026-05-24 run, whose report printed the full width.
 
 ## Reading it
 

@@ -26,9 +26,6 @@ python = "3.13"
 [skills.docx]
 packages = ["defusedxml", "lxml"]
 
-[skills.locuscompare-region-render]
-packages = ["matplotlib", "numpy", "pyyaml", "requests"]
-
 [skills.xlsx]
 packages = ["openpyxl", "defusedxml", "lxml"]
 
@@ -513,6 +510,9 @@ packages = ["ete3", "matplotlib"]
 
 [skills.onekgpd]
 packages = ["dnaerys"]
+
+[skills.locuscompare-region-render]
+packages = ["matplotlib", "numpy", "pyyaml", "requests"]
 
 [skills.genomic-intelligence]
 packages = ["requests"]

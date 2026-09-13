@@ -22,7 +22,7 @@ native files.
 | `variant_id` | string | `chrom_pos_ref_alt`, GRCh38, no `chr` prefix (`1_109274968_G_T`). The join key between the two sides and the id the LD client is asked about. |
 | `chromosome` | string | Without `chr`: `1` .. `22`, `X`, `Y`, `MT`. |
 | `position_bp` | integer | 1-based GRCh38 position. |
-| `allele_a` | string | The non-effect allele (reference in most sources). |
+| `allele_a` | string | The non-effect allele. |
 | `allele_b` | string | The effect allele; `beta` is per copy of `allele_b`. |
 | `beta` | float | Effect estimate. |
 | `se` | float | Standard error of `beta`. |

@@ -22,11 +22,13 @@ the one-line labels built by the composer: `Outcome (GWAS): <trait label> (<acce
 protein, panel and ancestry for a pQTL exposure).
 
 **3. Gene track.** Genes in the window, packed into rows so overlapping spans do not collide.
-Each gene is a line across its span with strand arrows every 4% of the window (pointing
-right for `+`, left for `-`), exon boxes when the source provides exons (Ensembl REST does; a
-synthetic TSV has none), and its symbol. The gene named by `exposure.gene_symbol`
-is drawn bold and red. Only `gene_track.biotypes` (default `protein_coding`) are shown. When
-the track is empty the row collapses and the exposure Manhattan carries the position axis.
+Each gene is a line across its span with strand arrows every 4% of the window or every 5 kb,
+whichever is larger (`max(int(window * 0.04), 5000)` bp, so a narrow window does not crowd
+the arrows; pointing right for `+`, left for `-`), exon boxes when the source provides exons
+(Ensembl REST does; a synthetic TSV has none), and its symbol. The gene named by
+`exposure.gene_symbol` is drawn bold and red. Only `gene_track.biotypes` (default
+`protein_coding`) are shown. When the track is empty the row collapses and the exposure
+Manhattan carries the position axis.
 
 The x-axis is forced to `lead_position +/- window_bp // 2`, so the lead is centred even when
 the data end before the window edge.
