@@ -27,7 +27,7 @@ python = "3.13"
 packages = ["defusedxml", "lxml"]
 
 [skills.locuscompare-region-render]
-packages = ["matplotlib", "numpy", "pysam", "pyyaml", "requests"]
+packages = ["matplotlib", "numpy", "pyyaml", "requests"]
 
 [skills.xlsx]
 packages = ["openpyxl", "defusedxml", "lxml"]

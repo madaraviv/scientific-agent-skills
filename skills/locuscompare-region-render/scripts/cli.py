@@ -45,7 +45,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--input",
         type=Path,
-        help="Path to the run config (JSON or YAML). See INPUT_SCHEMA.md.",
+        help="Path to the run config (JSON or YAML). See references/input_schema.md.",
     )
     parser.add_argument(
         "--output",
@@ -224,7 +224,7 @@ def _run(*, config: dict, config_dir: Path, output: Path) -> int:
         print(
             "exposure requires either a `fetch:` block (live tabix) or a "
             "`sumstats_path:` field (pre-fetched canonical TSV; see "
-            "INPUT_SCHEMA.md).",
+            "references/input_schema.md).",
             file=sys.stderr,
         )
         return 2
@@ -232,7 +232,7 @@ def _run(*, config: dict, config_dir: Path, output: Path) -> int:
         print(
             "outcome requires either a `fetch:` block (live tabix) or a "
             "`sumstats_path:` field (pre-fetched canonical TSV; see "
-            "INPUT_SCHEMA.md).",
+            "references/input_schema.md).",
             file=sys.stderr,
         )
         return 2
