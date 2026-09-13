@@ -33,12 +33,15 @@ python cli.py --demo 05_sqtl_sort1_liver_txrev --output runs/sqtl_sort1_liver_tx
 ```
 
 The `manifest.yaml` and `report.md` of a run on 2026-05-24 (`n_pairs: 2648`,
-`n_palindromic_excluded: 349`, LD from 1000 Genomes EUR via plink 1.9) are kept as test
-fixtures in this repository, not in the skill, at
+`n_palindromic_excluded: 349`, LD from 1000 Genomes EUR via plink 1.9) live in this
+repository's test tree, not in the skill, at
 `tests/locuscompare-region-render/fixtures/examples/05_sqtl_sort1_liver_txrev/expected_output/`;
-the PNG is not shipped. The window label on line 3 of that `report.md` (`±500 kb`) was
-re-derived from the current code, which reports the half-window the fetch covered, rather
-than copied from the 2026-05-24 run, whose report printed the full width.
+the PNG is not shipped. `tests/locuscompare-region-render/test_example_fixtures.py` checks
+them against the current code: the manifest's key layout against a fresh offline run, the
+report's lead line against the line `cli.py` writes, and the counts above against the
+manifest. The window label on line 3 of that `report.md` (`±500 kb`) was re-derived from
+the current code, which reports the half-window the fetch covered, rather than copied
+from the 2026-05-24 run, whose report printed the full width.
 
 ## Reading it
 

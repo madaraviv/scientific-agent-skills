@@ -11,9 +11,11 @@ FinnGen direct download: <https://finngen.gitbook.io/documentation/data-download
 - **License**: open-access for sumstats since FinnGen R12; check the current
   release's data-use agreement at <https://www.finngen.fi/en/access_results>
 - **Auth**: none for sumstats (was registration-gated until R11; relaxed in R12)
-- **Why use direct over GWAS Catalog**: more recent releases, bigger N, FinnGen
-  often catches Finnish-enriched signals (HLA-DR3, SLC22A12, etc.) that don't
-  appear in Pan-UKBB.
+- **Why use direct over GWAS Catalog**: more recent releases, bigger N, and
+  FinnGen can carry Finnish-enriched signals. In the FinnGen release 6 analysis
+  (Kurki 2023, cited below), fine-mapping implicated 148 coding variants; 91 of
+  those had an allele frequency below 5% in non-Finnish Europeans, and 62 of the
+  91 were enriched more than twofold in Finland.
 
 ## Quick start
 
@@ -54,4 +56,5 @@ allele (matches our canonical convention). No flip needed.
 ## Citation
 
 > Kurki et al. (2023) *FinnGen provides genetic insights from a well-phenotyped
-> isolated population.* Nature 613, 508-518. doi:10.1038/s41586-022-05473-8
+> isolated population.* Nature 613, 508-518. doi:10.1038/s41586-022-05473-8,
+> PMID 36653562
