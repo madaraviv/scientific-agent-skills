@@ -1,0 +1,46 @@
+schema_version: "1.0"
+
+# Entry from a per-variant lookup: you looked an rsID up across GWAS and QTL
+# databases, saw a strong (GWAS, eQTL) pair at it, and want the regional view.
+# See README.md for the field-by-field translation.
+
+# Lead variant carried over from the lookup (rsID resolved to chr_pos_ref_alt, GRCh38).
+lead:
+  variant_id: "1_109274968_G_T"   # rs12740374 in GRCh38 chr_pos_ref_alt form
+  chromosome: "1"
+  position_bp: 109274968
+  window_bp: 1000000
+
+# Exposure side: the lookup's eQTL table listed
+# (study=QTD000276, gene_name=SORT1, p=8e-30, beta=+0.602) as the strongest
+# eQTL hit at this variant.
+exposure:
+  trait_label: "SORT1 expression, minor salivary gland (eQTL Cat QTD000276)"
+  fetch:
+    source: eqtl_catalogue
+    dataset_id: QTD000276
+    molecular_trait_id: ENSG00000134243
+
+# Outcome side: the lookup's GWAS table flagged
+# (study_accession=GCST90269602, trait="cholesterol in medium VLDL", p=2e-50)
+# as the strongest GWAS hit at this variant.
+outcome:
+  trait_label: "cholesterol in medium VLDL"
+  fetch:
+    source: gwas_catalog
+    accession: GCST90269602
+
+# Provenance: which lookup run produced the (study, study) pairing
+provenance:
+  gwas_lookup_run_dir: "runs/gwas_lookup/"
+  rsid_queried: "rs12740374"
+
+ld:
+  source: 1000g_phase3_grch38
+  super_pop: EUR
+
+gene_track:
+  source: gencode_v39
+
+harmonisation:
+  exclude_palindromic: true

@@ -26,6 +26,9 @@ python = "3.13"
 [skills.docx]
 packages = ["defusedxml", "lxml"]
 
+[skills.locuscompare-region-render]
+packages = ["matplotlib", "numpy", "pysam", "pyyaml", "requests"]
+
 [skills.xlsx]
 packages = ["openpyxl", "defusedxml", "lxml"]
 

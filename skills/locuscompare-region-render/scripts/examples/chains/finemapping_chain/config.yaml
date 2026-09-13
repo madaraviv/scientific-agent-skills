@@ -1,0 +1,36 @@
+schema_version: "1.0"
+
+# Chain from two fine-mapping runs. A fine-mapping tool that writes the
+# harmonised slice it operated on can feed both sides here directly; the
+# paths below are placeholders relative to this file. See README.md.
+
+lead:
+  variant_id: "1_109274968_G_T"
+  chromosome: "1"
+  position_bp: 109274968
+  window_bp: 1000000
+
+exposure:
+  trait_label: "Exposure (fine-mapped credible sets, ../runs/finemap_exposure/)"
+  # The harmonised slice the fine-mapping run operated on (placeholder path).
+  sumstats_path: "../runs/finemap_exposure/inputs/locus.tsv"
+
+outcome:
+  trait_label: "Outcome (fine-mapped credible sets, ../runs/finemap_outcome/)"
+  sumstats_path: "../runs/finemap_outcome/inputs/locus.tsv"
+
+ld:
+  source: 1000g_phase3_grch38
+  super_pop: EUR
+
+gene_track:
+  source: gencode_v39
+
+harmonisation:
+  exclude_palindromic: true
+
+# Documentation only: the CLI does not read this block, and posterior
+# inclusion probabilities are not drawn.
+fine_mapping_outputs:
+  exposure_pips_path: "../runs/finemap_exposure/tables/pips.tsv"
+  outcome_pips_path: "../runs/finemap_outcome/tables/pips.tsv"

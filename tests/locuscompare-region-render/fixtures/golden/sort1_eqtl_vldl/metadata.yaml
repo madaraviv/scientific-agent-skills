@@ -1,0 +1,21 @@
+test_id: sort1_eqtl_vldl
+gene_symbol: SORT1
+ensembl_id: ENSG00000134243
+gwas_outcome_accession: GCST90269602
+gwas_outcome_label: cholesterol in medium VLDL
+lead_variant_id: "1_109274968_G_T"
+lead_rsid: rs12740374
+lead_position_grch38: 109274968
+chromosome: "1"
+window_bp: 1000000
+
+exposure:
+  kind: eqtl_catalogue
+  dataset_id: QTD000276
+  label: GTEx minor salivary gland gene-expression eQTL
+  quant_method: ge
+
+ot_release: "26.03"
+gwas_catalog_capture_date: "2026-05-15"
+eqtl_catalogue_release: v7+
+captured_at_utc: "2026-05-15T18:07:03Z"

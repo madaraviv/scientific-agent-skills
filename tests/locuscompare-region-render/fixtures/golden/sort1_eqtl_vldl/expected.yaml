@@ -1,0 +1,39 @@
+# Golden manifest block for the SORT1 eQTL x cholesterol-in-medium-VLDL render.
+# Captured 2026-05-15 by cassette replay against the two input slices in
+# `inputs/` (eQTL Catalogue QTD000276 for ENSG00000134243, GWAS Catalog
+# harmonised GCST90269602; both +/-500 kb of 1_109274968_G_T). Each key here
+# is asserted against `Tier2Result.manifest_block`. Keys deliberately absent:
+#
+# - `fetched_at`: render-time timestamp.
+# - `plot_artifact`: basename of the test's out_path.
+#
+# A failing assertion means the composer's behaviour changed; inspect the
+# diff and refresh only with an explicit rationale.
+
+eqtl_render:
+  manifest_block:
+    ot_release: "26.03"
+    exposure_source: "eqtl_catalogue"
+    exposure_source_release: "v7+"
+    exposure_study_id: "QTD000276"
+    exposure_protein_label: ""
+    exposure_ancestry: ""
+    exposure_ancestry_label: ""
+    exposure_harmonisation_version: ""
+    outcome_source: "gwas_catalog_harmonised"
+    outcome_source_release: "2026-05-15"
+    outcome_study_id: "GCST90269602"
+    outcome_harmonisation_version: ""
+    ld_panel: "none"
+    ld_panel_super_pop: "EUR"
+    ld_panel_version: ""
+    plink_version: ""
+    window_bp: 1000000
+    lead_variant_id: "1_109274968_G_T"
+    n_pairs: 2547
+    n_palindromic_excluded: 333
+    scatter_downsampled: false
+    scatter_downsample_target: 5000
+    ancestry_caveats:
+      - "LD r\xB2 unavailable (no plink client provided); points show as grey"
+    data_source_warnings: []
