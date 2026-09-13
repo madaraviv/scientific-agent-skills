@@ -512,7 +512,7 @@ packages = ["ete3", "matplotlib"]
 packages = ["dnaerys"]
 
 [skills.ld-1000g-region-compute]
-packages = ["pysam", "requests", "pandas"]
+packages = ["pysam", "pyyaml", "requests"]
 
 [skills.genomic-intelligence]
 packages = ["requests"]
