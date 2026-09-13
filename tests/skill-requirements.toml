@@ -511,6 +511,9 @@ packages = ["ete3", "matplotlib"]
 [skills.onekgpd]
 packages = ["dnaerys"]
 
+[skills.ld-1000g-region-compute]
+packages = ["pysam", "requests", "pandas"]
+
 [skills.genomic-intelligence]
 packages = ["requests"]
 
