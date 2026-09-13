@@ -1,6 +1,6 @@
 ---
 name: eqtl-catalogue-region-fetch
-description: Fetch a region of cis-QTL summary statistics from EBI eQTL Catalogue v7+ via tabix-on-FTP. Returns harmonised per-variant rows (variant_id, chromosome, position, ref, alt, beta, SE, p-value, MAF, molecular_trait_id, study_id) for downstream colocalization, fine-mapping, regional plotting, or Mendelian randomisation. Covers all expression-related QTL flavors the catalogue hosts (gene-level, exon, transcript, transcript-event/txrevise, splicing/leafcutter, microarray, allelic fold-change). Use when an agent needs cis-QTL beta / SE / p-value for every variant in a window around a gene's TSS for one specific dataset (study × tissue × quantification method).
+description: Fetch a region of cis-QTL summary statistics from EBI eQTL Catalogue v7+ via tabix-on-FTP. Returns harmonised per-variant rows (variant_id, chromosome, position, ref, alt, beta, SE, p-value, MAF, molecular_trait_id, study_id) for downstream colocalization, fine-mapping, regional plotting, or Mendelian randomisation. Covers every quantification in the catalogue's r7 dataset table (gene-level, exon, transcript, transcript-event/txrevise, splicing/leafcutter, microarray, and the aptamer protein dataset). Use when an agent needs cis-QTL beta / SE / p-value for every variant in a window around a gene's TSS for one specific dataset (study × tissue × quantification method).
 license: MIT
 compatibility: Requires network access (queries the EBI eQTL Catalogue FTP; dataset metadata is read from a table bundled with the skill)
 metadata:
