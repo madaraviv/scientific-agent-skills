@@ -511,6 +511,9 @@ packages = ["ete3", "matplotlib"]
 [skills.onekgpd]
 packages = ["dnaerys"]
 
+[skills.gwas-catalog-region-fetch]
+packages = ["pysam", "pyyaml", "requests"]
+
 [skills.genomic-intelligence]
 packages = ["requests"]
 
