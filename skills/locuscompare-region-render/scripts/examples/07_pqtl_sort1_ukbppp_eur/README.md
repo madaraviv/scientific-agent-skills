@@ -25,7 +25,7 @@ The `manifest.yaml` and `report.md` of a run on 2026-05-24 with the sibling inst
 in the skill, at
 `tests/locuscompare-region-render/fixtures/examples/07_pqtl_sort1_ukbppp_eur/expected_output/`;
 the PNG is not shipped. `tests/locuscompare-region-render/test_example_fixtures.py` checks
-them against the current code: the manifest's key layout against a fresh offline run, the
+them against the current code: the manifest's key layout against a fresh offline run (both of these checks run only when the sibling fetch skills are installed; without them the test skips them), the
 report's lead line against the line `cli.py` writes, and the counts above against the
 manifest. The window label on line 3 of that `report.md` (`±500 kb`) was re-derived from
 the current code, which reports the half-window the fetch covered, rather than copied

@@ -12,7 +12,7 @@ FinnGen direct download: <https://finngen.gitbook.io/documentation/data-download
   release's data-use agreement at <https://www.finngen.fi/en/access_results>
 - **Auth**: none for sumstats (was registration-gated until R11; relaxed in R12)
 - **Why use direct over GWAS Catalog**: more recent releases, bigger N, and
-  FinnGen can carry Finnish-enriched signals. In the FinnGen release 6 analysis
+  FinnGen can carry Finnish-enriched signals. In the FinnGen release 5 analysis (data freeze 5, 224,737 participants)
   (Kurki 2023, cited below), fine-mapping implicated 148 coding variants; 91 of
   those had an allele frequency below 5% in non-Finnish Europeans, and 62 of the
   91 were enriched more than twofold in Finland.
