@@ -161,6 +161,11 @@ class RegionResult:
     variants: list[RegionVariant]
     release: EQTLCatalogueRelease
     notes: list[str] = field(default_factory=list)
+    # Which per-variant file class served this fetch: "all" (full nominal pass) or
+    # "cc" (credible-set-filtered), read from the file that was OPENED. None only
+    # for a result that never read one (a hand-built double, a replayed fixture),
+    # so a consumer is not forced to claim a class it never read.
+    file_class: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -172,6 +177,7 @@ class RegionResult:
             "variants": [asdict(v) for v in self.variants],
             "release": asdict(self.release),
             "notes": list(self.notes),
+            "file_class": self.file_class,
         }
 
 
@@ -439,6 +445,7 @@ class EQTLCatalogueClient:
             variants=variants,
             release=release,
             notes=notes,
+            file_class=fc.lower(),
         )
 
 
@@ -722,6 +729,7 @@ def _region_result_from_cache(d: dict) -> "RegionResult":
         region_start_bp=int(d["region_start_bp"]), region_end_bp=int(d["region_end_bp"]),
         release=release, n_variants=int(d["n_variants"]),
         variants=variants, notes=list(d.get("notes") or []),
+        file_class=d.get("file_class"),
     )
 
 
