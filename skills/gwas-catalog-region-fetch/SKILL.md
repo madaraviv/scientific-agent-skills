@@ -96,6 +96,8 @@ for v in result.variants[:3]:
 
 `scripts/examples/run_example.sh` does the same for `scripts/examples/input.json`.
 
+`scripts/examples/expected_output.md` predates the current file and is illustrative only; the demo fetch on 2026-09-13 (n = 5,117 rows) returned 5,117 variants, not the ~3000 it states, the lead row `1_109274968_G_T` is rs12740374 with p = 1.5e-78 (rs646776 is `1_109275908_C_T`), and rows carry `effect_allele_frequency`, not `maf`.
+
 Bundled configs (`scripts/examples/`), traits read from each file's `-meta.yaml` sidecar on
 2026-09-13:
 
