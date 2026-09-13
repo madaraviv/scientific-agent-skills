@@ -6,11 +6,11 @@ abundance (UKB-PPP, Olink) as the exposure. `exposure.fetch.source: ukb_ppp` dis
 
 ## Requirement
 
-`ukb-ppp-region-fetch` is not part of this collection. Without it installed beside this skill
-under `skills/`, this demo is refused with exit code 2 and the message
-`exposure.fetch.source=ukb_ppp needs the sibling skill ukb-ppp-region-fetch ...`; pQTL
-exposures are unavailable here until that skill exists in this collection. The config and this
-note are kept so the pQTL entry vector is documented.
+`ukb-ppp-region-fetch` is optional. When it is not installed beside this skill under
+`skills/`, this demo is refused with exit code 2 and the message
+`exposure.fetch.source=ukb_ppp needs the sibling skill ukb-ppp-region-fetch ...`, and a pQTL
+exposure through the Python API raises `Tier2NotAvailable`. The config and this note document
+the pQTL entry vector either way.
 
 ## Run (with the sibling installed)
 

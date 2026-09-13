@@ -17,7 +17,7 @@ picture of hypothesis H4.
 reverse, and the high-r² points split between them. Two distinct causal variants in LD, each
 driving one trait, produce it: hypothesis H3.
 
-In between, a bent or fanned diagonal is common when one study is much better powered than the
+In between, a bent or fanned diagonal can arise when one study is much better powered than the
 other, or when the two cohorts' LD differs from the reference used for colouring.
 
 ## What the pattern does not prove
@@ -29,7 +29,7 @@ other, or when the two cohorts' LD differs from the reference used for colouring
   clusters.
 - The lead variant need not be the most significant point in either track. A lead chosen as
   the most probable shared variant (for example from the product of two fine-mapping
-  posteriors) is often not the minimum-p variant of either study. That is expected; a lead far
+  posteriors) need not be the minimum-p variant of either study. That is expected; a lead far
   from the top-right corner of the LocusCompare panel is what deserves a second look.
 - LD colouring is from a reference panel, not from either cohort. Orange points far from the
   diagonal can mean the cohorts' LD differs from the reference (ancestry), or that the locus

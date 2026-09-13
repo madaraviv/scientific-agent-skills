@@ -364,7 +364,10 @@ def test_prefetched_synthetic_demo_runs_end_to_end_offline(tmp_path: Path):
     block = manifest["render_block"]
     assert block["ld_panel"] == "synthetic" and block["plink_version"] == "prefetched"
     assert block["scatter_downsampled"] is False
-    assert (out / "report.md").is_file()
+    # window_bp is the full width (1,000,000 here); every emitted label reports
+    # the half-window the fetch actually covered, +/-500 kb, never +/-1000 kb.
+    report = (out / "report.md").read_text()
+    assert "±500 kb" in report and "1000 kb" not in report
 
 
 @needs_siblings

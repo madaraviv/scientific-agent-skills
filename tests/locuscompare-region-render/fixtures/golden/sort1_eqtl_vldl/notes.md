@@ -13,5 +13,5 @@ Locked: study identifiers, window, lead, `n_pairs` (2547) and
 `ld_client=None`. Not locked: `fetched_at`, `plot_artifact`.
 
 The upstream copy of this fixture also carried a UKB-PPP pQTL half. That half
-needs the `ukb-ppp-region-fetch` skill, which is not part of this collection,
-so it is not shipped here.
+needs the optional `ukb-ppp-region-fetch` skill, which this suite does not
+require, so it is not shipped here.

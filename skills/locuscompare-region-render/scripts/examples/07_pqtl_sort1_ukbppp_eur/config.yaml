@@ -6,8 +6,8 @@ schema_version: "1.0"
 # side from GTEx minor salivary gland).
 #
 # source: ukb_ppp needs the optional ukb-ppp-region-fetch skill installed
-# beside this one; it is not part of this collection, so this demo is
-# refused by name without it. See README.md.
+# beside this one; when it is not installed, this demo is refused by name
+# with exit code 2. See README.md.
 
 lead:
   variant_id: "1_109274968_G_T"

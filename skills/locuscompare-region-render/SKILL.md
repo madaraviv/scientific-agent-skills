@@ -97,7 +97,7 @@ Seven demos ship under `scripts/examples/` (details in `scripts/examples/README.
 | `04_gwas_lookup_followup` | SORT1 gene expression (QTD000276), entered from an rsID lookup | yes | same |
 | `05_sqtl_sort1_liver_txrev` | SORT1 transcript usage, GTEx liver (QTD000269) | yes | same |
 | `06_sceqtl_sort1_onek1k_cd14_mono` | SORT1 gene expression, OneK1K CD14+ monocytes (QTD000609) | yes | same |
-| `07_pqtl_sort1_ukbppp_eur` | SORT1 plasma protein, UKB-PPP European | yes | the optional `ukb-ppp-region-fetch` skill, which is not part of this collection; the run is refused by name without it |
+| `07_pqtl_sort1_ukbppp_eur` | SORT1 plasma protein, UKB-PPP European | yes | the optional `ukb-ppp-region-fetch` skill installed beside this one; without it the run is refused by name with exit code 2 |
 
 Every live demo shares the outcome GCST90269602 (cholesterol in medium VLDL) except 03.
 
@@ -223,17 +223,16 @@ prefix (`UKB_PPP_*` to the pQTL fetcher, anything else to the eQTL Catalogue) an
 | `eqtl-catalogue-region-fetch` | `eqtl_catalogue_region_fetch` | exposure slice (gene expression, exon, transcript, transcript usage, splicing, microarray, single-cell datasets) | yes |
 | `gwas-catalog-region-fetch` | `gwas_catalog_region_fetch` | outcome slice (harmonised summary statistics by `GCST` accession) | yes |
 | `ld-1000g-region-compute` | `ld_1000g_region_compute`, `ondemand_client` | r² of every exposure variant to the lead in one 1000 Genomes super-population, via plink 1.9 | yes (the client is optional at run time) |
-| `ukb-ppp-region-fetch` | `ukb_ppp_region_fetch` | plasma pQTL exposure (`source: ukb_ppp`, `UKB_PPP_*` study ids) | no; not in this collection |
+| `ukb-ppp-region-fetch` | `ukb_ppp_region_fetch` | plasma pQTL exposure (`source: ukb_ppp`, `UKB_PPP_*` study ids) | no; optional (the behaviour without it is below) |
 
 The composer inserts `skills/<sibling>/scripts/` on `sys.path` for each of these when the
 directory exists. A required sibling that cannot be imported raises
 `ImportError: locuscompare-region-render needs the sibling skill '<name>' ... expected at
 <path>`. Without `ukb-ppp-region-fetch` the module still loads with
 `UKB_PPP_AVAILABLE = False`; a pQTL exposure then raises `Tier2NotAvailable` from the API and
-the CLI refuses `source: ukb_ppp` with a message naming the skill. pQTL exposures are unavailable
-in this collection until that skill exists here. The stand-in clients in
-`scripts/_prefetched.py` still build the siblings' result types, so `sumstats_path:` inputs
-need the required siblings installed too.
+the CLI refuses `source: ukb_ppp` with exit code 2 and a message naming the skill. The stand-in
+clients in `scripts/_prefetched.py` still build the siblings' result types, so `sumstats_path:`
+inputs need the required siblings installed too.
 
 ## Gotchas
 

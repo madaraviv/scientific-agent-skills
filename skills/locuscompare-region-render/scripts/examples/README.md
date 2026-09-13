@@ -14,7 +14,7 @@ four harmonisation recipes for sources without a bundled fetcher. Run from the s
 | `04_gwas_lookup_followup/` | an rsID lookup | yes | you found a variant through a per-variant lookup and want the regional view |
 | `05_sqtl_sort1_liver_txrev/` | bundled fetchers (credible-set file) | yes | a splicing / transcript-usage exposure; SORT1 in GTEx liver |
 | `06_sceqtl_sort1_onek1k_cd14_mono/` | bundled fetchers | yes | a single-cell eQTL exposure; SORT1 in OneK1K CD14+ monocytes |
-| `07_pqtl_sort1_ukbppp_eur/` | bundled fetchers (`source: ukb_ppp`) | yes | a plasma pQTL exposure; needs the optional `ukb-ppp-region-fetch` skill, which is not in this collection |
+| `07_pqtl_sort1_ukbppp_eur/` | bundled fetchers (`source: ukb_ppp`) | yes | a plasma pQTL exposure; needs the optional `ukb-ppp-region-fetch` skill installed beside this one, and is refused by name (exit code 2) without it |
 
 Demos 02 and 04 to 07 share the outcome GCST90269602 (cholesterol in medium VLDL) and the
 SORT1 lead `1_109274968_G_T` (rs12740374); 03 is the LDLR locus. Live demos need plink 1.9

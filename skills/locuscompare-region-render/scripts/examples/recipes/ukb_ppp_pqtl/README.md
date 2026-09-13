@@ -12,9 +12,9 @@ UKB-PPP: <https://www.synapse.org/Synapse:syn51365303> (Synapse-hosted)
 - **License**: registration with UK Biobank required, plus a separate
   Synapse data-use agreement for UKB-PPP. The harmonised output carries a
   `# license: yellow ukb_ppp` header line so downstream tooling can see it.
-- **Why this matters**: with the optional `ukb-ppp-region-fetch` skill absent
-  from this collection, this recipe is the way to put a plasma pQTL on the
-  exposure side (through `sumstats_path`).
+- **Why this matters**: when the optional `ukb-ppp-region-fetch` skill is not
+  installed beside this one, this recipe is the way to put a plasma pQTL on
+  the exposure side (through `sumstats_path`).
 
 ## Authentication
 
