@@ -31,12 +31,23 @@ Counted from the sample panel file fetched on 2026-09-13 (2,504 samples in total
 `super_pop` is the only ancestry control the skill has; it selects samples, nothing finer. A
 single population (say FIN alone) needs a different keep file than this skill writes.
 
+## Panel file versus region VCF
+
+The two files come from different releases and do not list the same samples. Measured on the
+cached demo window, 2026-09-13: the region VCF's `#CHROM` header carries 2,548 sample columns
+(the 2019-03-12 release; plink's log reads `2548 people ... loaded from .fam`), while the
+2013 panel file above lists 2,504. The keep file is written from the panel file, so 45 VCF
+samples appear in no keep file and never enter a computation, and one panel sample, NA18498
+(YRI, AFR), is absent from the VCF. Effective n per super-population is therefore the table
+above except AFR, which computes on 660 (plink `--keep` for EUR reports 503 people
+remaining, so EUR is unaffected).
+
 ## Shape of a fetched region
 
 The bundled demo window (chromosome 1, 108,774,968 to 109,774,968, 1 Mb around the SORT1
-lead rs646776), fetched 2026-09-13: 26,405 variant rows, 1,779 of them indels, none
+lead rs12740374), fetched 2026-09-13: 26,405 variant rows, 1,779 of them indels, none
 multi-allelic (the release is split to biallelic rows), every ID column `.`, 3.15 MB gzipped
-with all 2,504 samples. The ID column matters: plink's `--set-missing-var-ids` only names
+with 2,548 sample columns. The ID column matters: plink's `--set-missing-var-ids` only names
 variants whose ID is missing, and in this release that is all of them.
 
 ## Variants the panel cannot answer for

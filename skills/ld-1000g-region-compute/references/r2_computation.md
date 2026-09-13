@@ -7,7 +7,7 @@ measured by running it; the measurements name their setup.
 ## The plink command
 
 For a lead at position `P` on chromosome `C` with `window_bp = W`, the client fetches the
-region `C:(P - W/2)-(P + W/2)` (all 2,504 samples) and runs:
+region `C:(P - W/2)-(P + W/2)` (every sample in the release, 2,548 columns) and runs:
 
 ```
 plink --vcf <region.vcf.gz> \
@@ -91,9 +91,12 @@ to seek will not. Neither key carries the panel version. The 20190312 release ha
 but if it ever does, a warm cache serves the old panel with no signal: delete the `1000g/`
 directory on a panel change.
 
-The region file holds all 2,504 samples; the super-population filter is applied by plink at
-compute time, so one cached window serves every super-population. Size for the 1 Mb SORT1
-demo window on chromosome 1: 3.15 MB, 26,405 variants (1,779 indels, no multi-allelic rows).
+The region file holds the 2,548 samples of the 2019-03-12 release; the super-population
+filter is applied by plink at compute time from the 2013 panel file's 2,504 samples, so one
+cached window serves every super-population (45 VCF samples are in no keep file; the AFR keep
+file names NA18498, which the VCF lacks, so AFR computes on 660; see
+`references/1000g_panel.md`). Size for the 1 Mb SORT1 demo window on chromosome 1: 3.15 MB,
+26,405 variants (1,779 indels, no multi-allelic rows).
 
 ## Timing
 

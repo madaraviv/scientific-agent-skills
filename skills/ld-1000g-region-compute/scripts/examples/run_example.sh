@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Example invocation: r² between the SORT1 lead (rs646776, 1_109274968_G_T) and
+# Example invocation: r² between the SORT1 lead (rs12740374, 1_109274968_G_T) and
 # the five partner variants in input.json, on the 1000G Phase 3 EUR panel.
 # Network required on first call (~5-50 MB region VCF fetch from EBI 1000G FTP).
 # Requires plink (1.9) on PATH (or PLINK_BIN env var pointing to it).

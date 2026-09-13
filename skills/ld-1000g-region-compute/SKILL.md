@@ -61,7 +61,7 @@ Trigger phrases include "LD around lead", "r² 1000G", "1000 Genomes LD panel",
 ## Quick start
 
 ```bash
-# Bundled demo: SORT1 lead rs646776, five partners within 5 kb, 1 Mb window, EUR
+# Bundled demo: SORT1 lead rs12740374, five partners within 5 kb, 1 Mb window, EUR
 python scripts/ld_1000g_region_compute.py --demo --output ./out/sort1_demo
 
 # Your own config
@@ -209,10 +209,11 @@ Details of the plink call and the parse, with the measurements behind Gotchas 2 
 - **Coordinates are GRCh38, 1-based**, matching Open Targets, GWAS Catalog harmonised files
   and the eQTL Catalogue. Contig names in the panel are bare (`1`); a `chr` prefix on input
   is stripped.
-- **Network on first call per window.** The region VCF (all 2,504 samples, so one cached
-  window serves every super-population) and the 55 KB sample panel land in
-  `~/.clawbio/locuscompare_cache/1000g/` (parent directory overridable with
-  `LOCUSCOMPARE_CACHE_DIR`). The CLI additionally caches its result JSON in
+- **Network on first call per window.** The region VCF (the 2,548 samples of the 2019-03-12
+  release, so one cached window serves every super-population; the keep files select from
+  the 2,504 the 2013 panel file lists, see `references/1000g_panel.md`) and the 55 KB
+  sample panel land in `~/.clawbio/locuscompare_cache/1000g/` (parent directory
+  overridable with `LOCUSCOMPARE_CACHE_DIR`). The CLI additionally caches its result JSON in
   `~/.clawbio/ld_1000g_region_compute_cache/` (`LD_1000G_RESULT_CACHE_DIR`); `--no-cache`
   bypasses that result cache, not the region cache.
 - **Timing.** With the region cached, the demo rerun with `--no-cache` took 0.77 s

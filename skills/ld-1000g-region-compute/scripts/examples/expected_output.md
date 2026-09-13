@@ -1,6 +1,6 @@
 # Expected output: r² between the SORT1 lead and five nearby variants
 
-Input: `input.json` (identical to `default.json`): lead `1_109274968_G_T` (rs646776), five
+Input: `input.json` (identical to `default.json`): lead `1_109274968_G_T` (rs12740374), five
 partners within 5 kb, chromosome 1, a 1 Mb window, EUR.
 
 ## What you get
