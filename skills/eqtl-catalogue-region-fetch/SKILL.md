@@ -165,7 +165,7 @@ Note: pQTL data is **not** in the eQTL Catalogue (UKB-PPP and deCODE are the can
 
 - **Coordinate convention is 1-based inclusive throughout** (matches Ensembl, GTEx, GWAS Catalog harmonised, eQTL Catalogue, OT, 1000G VCF). The only place 0-based half-open shows up in this stack is BED files; this skill never produces BED.
 - **Per-study attribution required.** Sources are CC-BY-4.0 (catalogue level); per-study attribution is the original publication of each constituent dataset (see `manifest.yaml.release.study_label` and the catalogue's [studies page](https://www.ebi.ac.uk/eqtl/Studies/) for citation strings).
-- **Network required on first call** for any (dataset, region). Subsequent calls hit a local JSON cache at `~/.clawbio/eqtl_catalogue_region_fetch_cache/` (overridable via `EQTL_CATALOGUE_CACHE_DIR`). Pass `--no-cache` to bypass; a cache entry written before September 2026 can otherwise mask the retired API for that region.
+- **Network required on first call** for any (dataset, region). Subsequent calls hit a local JSON cache at `~/.clawbio/eqtl_catalogue_region_fetch_cache/` (overridable via `EQTL_CATALOGUE_CACHE_DIR`). Each entry is keyed on the file class that is opened and on the bundled table's release (`r7`), so a window cached before the table existed, under the retired inference rule, is never served again, and a table upgrade retires the cache the same way. Pass `--no-cache` to bypass it entirely.
 
 ## Safety
 
